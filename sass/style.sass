@@ -1,3 +1,62 @@
+@font-face
+  font-family: 'hansolo'
+  src: url(../fonts/hansolo.otf)
+    
 body
-    font-family: 'Quicksand', sans-serif
+    height: 100vh
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: center 
+    background-image: url(../img/background.jpg)
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-color: rgba(137, 41, 156, 0.3)
+    background-blend-mode: overlay
 
+    h1
+        font-size: 70px
+        font-weight: 700
+        color: #000
+        font-family: 'hansolo'
+
+    .wrapper
+        font-family: 'Open Sans', sans-serif
+        width: 800px
+        display: flex
+        align-items: flex-start
+        justify-content: space-between
+
+        .starships, .people, .planets
+            margin-top: 50px
+            display: flex
+            flex-direction: column
+            text-align: center
+
+            .img
+                width: 250px
+                height: 250px
+                background: black
+                border-radius: 10px 10px 0 0
+
+            .description
+                padding: 15px
+                background-color: #fff
+                font-weight: 400
+                width: 250px
+                text-transform: capitalize
+
+            .button
+                color: #fff
+                padding: 15px
+                background: linear-gradient(to right top, #0f0c29, #302b63)
+                font-weight: 700
+                width: 250px
+                border-radius: 0 0 10px 10px
+                text-transform: uppercase
+                cursor: pointer
+                transition: 200ms
+                letter-spacing: 2px
+                &:active
+                    letter-spacing: 1.5px

@@ -1,4 +1,95 @@
+@font-face {
+  font-family: 'hansolo';
+  src: url(../fonts/hansolo.otf);
+}
+
 body {
-  font-family: 'Quicksand', sans-serif;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(137, 41, 156, 0.3);
+  background-blend-mode: overlay;
+}
+
+body h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #000;
+  font-family: 'hansolo';
+}
+
+body .wrapper {
+  font-family: 'Open Sans', sans-serif;
+  width: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .wrapper .starships, body .wrapper .people, body .wrapper .planets {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+body .wrapper .starships .img, body .wrapper .people .img, body .wrapper .planets .img {
+  width: 250px;
+  height: 250px;
+  background: black;
+  border-radius: 10px 10px 0 0;
+}
+
+body .wrapper .starships .description, body .wrapper .people .description, body .wrapper .planets .description {
+  padding: 15px;
+  background-color: #fff;
+  font-weight: 400;
+  width: 250px;
+  text-transform: capitalize;
+}
+
+body .wrapper .starships .button, body .wrapper .people .button, body .wrapper .planets .button {
+  color: #fff;
+  padding: 15px;
+  background: -webkit-gradient(linear, left bottom, right top, from(#0f0c29), to(#302b63));
+  background: linear-gradient(to right top, #0f0c29, #302b63);
+  font-weight: 700;
+  width: 250px;
+  border-radius: 0 0 10px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  letter-spacing: 2px;
+}
+
+body .wrapper .starships .button:active, body .wrapper .people .button:active, body .wrapper .planets .button:active {
+  letter-spacing: 1.5px;
 }
 /*# sourceMappingURL=style.css.map */
