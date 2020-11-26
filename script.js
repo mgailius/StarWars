@@ -90,7 +90,6 @@ function displayPeople() {
 function displayStarships() {
     UI.heading[2].classList.add("active");
     const random = Math.floor(Math.random() * starships.length);
-    if(random == 2){starships[random].name = "Landing Craft";}
     UI.img[2].style.backgroundImage = `url(img/starships/starship${random}.jpg)`;
     UI.name[2].innerHTML = `${starships[random].name}`;
     UI.property2[0].innerHTML = `${starships[random].crew}`;

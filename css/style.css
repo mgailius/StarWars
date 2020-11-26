@@ -160,7 +160,7 @@ h1 {
           align-items: center;
   padding: 0 15px;
   max-height: 0;
-  line-height: 50px;
+  min-height: 0;
   background-color: #fff;
   font-weight: 600;
   width: 250px;
@@ -195,6 +195,7 @@ h1 {
 
 .wrapper .heading.active {
   max-height: 50px;
+  min-height: 50px;
 }
 
 .wrapper .description {
