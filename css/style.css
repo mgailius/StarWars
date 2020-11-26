@@ -56,8 +56,6 @@ h1 {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  -webkit-box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
-          box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
 }
 
 .wrapper .starships::before, .wrapper .people::before, .wrapper .planets::before {
@@ -141,6 +139,11 @@ h1 {
 
 .wrapper .planets .img {
   background-image: url(../img/default/planets.png);
+}
+
+.wrapper .fakeHeading {
+  height: 50px;
+  width: 250px;
 }
 
 .wrapper .heading {
