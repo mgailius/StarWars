@@ -18,24 +18,22 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: url(../img/background.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(137, 41, 156, 0.3);
-  background-blend-mode: overlay;
+  background-color: #fff;
 }
 
-body h1 {
+h1 {
   font-size: 70px;
   font-weight: 700;
   color: #000;
   font-family: 'hansolo';
 }
 
-body .wrapper {
+.wrapper {
   font-family: 'Open Sans', sans-serif;
-  width: 800px;
+  width: 900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +45,8 @@ body .wrapper {
           justify-content: space-between;
 }
 
-body .wrapper .starships, body .wrapper .people, body .wrapper .planets {
+.wrapper .starships, .wrapper .people, .wrapper .planets {
+  position: relative;
   margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,39 +56,173 @@ body .wrapper .starships, body .wrapper .people, body .wrapper .planets {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+  -webkit-box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
 }
 
-body .wrapper .starships .img, body .wrapper .people .img, body .wrapper .planets .img {
+.wrapper .starships::before, .wrapper .people::before, .wrapper .planets::before {
+  font-weight: 600;
+  display: block;
+  position: absolute;
+  line-height: 20px;
+  top: -25px;
+  color: #555;
+  font-size: 14px;
+}
+
+.wrapper .starships .img, .wrapper .people .img, .wrapper .planets .img {
   width: 250px;
   height: 250px;
-  background: black;
-  border-radius: 10px 10px 0 0;
+  background-color: rgba(0, 0, 0, 0);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  background-blend-mode: overlay;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
 }
 
-body .wrapper .starships .description, body .wrapper .people .description, body .wrapper .planets .description {
-  padding: 15px;
+.wrapper .starships .img:hover, .wrapper .people .img:hover, .wrapper .planets .img:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.wrapper .starships .img:hover img, .wrapper .people .img:hover img, .wrapper .planets .img:hover img {
+  -webkit-transform: rotate(-15deg);
+          transform: rotate(-15deg);
+  opacity: 1;
+}
+
+.wrapper .starships .img:active img, .wrapper .people .img:active img, .wrapper .planets .img:active img {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.wrapper .starships .img img, .wrapper .people .img img, .wrapper .planets .img img {
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  opacity: 0;
+  height: 60px;
+  width: auto;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.wrapper .starships::before {
+  content: 'Starships';
+}
+
+.wrapper .starships .img {
+  background-image: url(../img/default/starships.png);
+}
+
+.wrapper .people::before {
+  content: 'People';
+}
+
+.wrapper .people .img {
+  background-image: url(../img/default/people.png);
+}
+
+.wrapper .planets::before {
+  content: 'Planets';
+}
+
+.wrapper .planets .img {
+  background-image: url(../img/default/planets.png);
+}
+
+.wrapper .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+  height: 50px;
   background-color: #fff;
-  font-weight: 400;
+  font-weight: 600;
   width: 250px;
   text-transform: capitalize;
-}
-
-body .wrapper .starships .button, body .wrapper .people .button, body .wrapper .planets .button {
-  color: #fff;
-  padding: 15px;
-  background: -webkit-gradient(linear, left bottom, right top, from(#0f0c29), to(#302b63));
-  background: linear-gradient(to right top, #0f0c29, #302b63);
-  font-weight: 700;
-  width: 250px;
-  border-radius: 0 0 10px 10px;
-  text-transform: uppercase;
   cursor: pointer;
-  -webkit-transition: 200ms;
-  transition: 200ms;
-  letter-spacing: 2px;
+  font-weight: 700;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: left;
 }
 
-body .wrapper .starships .button:active, body .wrapper .people .button:active, body .wrapper .planets .button:active {
-  letter-spacing: 1.5px;
+.wrapper .heading img {
+  width: 15px;
+  margin-left: 10px;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.wrapper .heading img.rotated {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}
+
+.wrapper .description {
+  width: 250px;
+  position: absolute;
+  top: 300px;
+  background-color: #111;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  max-height: 0;
+  -webkit-transition: 400ms;
+  transition: 400ms;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 29px -11px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 29px -11px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .description div {
+  width: 100%;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 50px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.wrapper .description div span {
+  font-weight: 400;
+}
+
+.wrapper .description.open {
+  max-height: 150px;
 }
 /*# sourceMappingURL=style.css.map */

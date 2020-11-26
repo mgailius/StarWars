@@ -8,55 +8,142 @@ body
     align-items: center
     flex-direction: column
     justify-content: center 
-    background-image: url(../img/background.jpg)
+    // background-image: url(../img/background.jpg)
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-    background-color: rgba(137, 41, 156, 0.3)
-    background-blend-mode: overlay
+    background-color: #fff
+    // background-blend-mode: overlay
 
-    h1
-        font-size: 70px
-        font-weight: 700
-        color: #000
-        font-family: 'hansolo'
+h1
+    font-size: 70px
+    font-weight: 700
+    color: #000
+    font-family: 'hansolo'
 
-    .wrapper
-        font-family: 'Open Sans', sans-serif
-        width: 800px
+.wrapper
+    font-family: 'Open Sans', sans-serif
+    width: 900px
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+
+    .starships, .people, .planets
+        position: relative
+        margin-top: 50px
         display: flex
-        align-items: flex-start
-        justify-content: space-between
+        flex-direction: column
+        text-align: center
+        box-shadow: 1px 1px 29px -11px rgba(0,0,0,0.4)
+        &::before
+            font-weight: 600
+            display: block
+            position: absolute
+            line-height: 20px
+            top: -25px
+            color: #555
+            font-size: 14px
 
-        .starships, .people, .planets
-            margin-top: 50px
+        .img
+            width: 250px
+            height: 250px
+            background-color: rgba(0, 0, 0, 0)
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            transition: 400ms
+            background-blend-mode: overlay
             display: flex
-            flex-direction: column
-            text-align: center
+            justify-content: center
+            align-items: center
+            cursor: pointer
+            &:hover
+                background-color: rgba(0, 0, 0, 0.7)
 
-            .img
-                width: 250px
-                height: 250px
-                background: black
-                border-radius: 10px 10px 0 0
+            &:hover img
+                transform: rotate(-15deg)
+                opacity: 1
 
-            .description
-                padding: 15px
-                background-color: #fff
+            &:active img
+                transform: scale(0.95)
+
+            img
+                transition: 400ms
+                opacity: 0
+                height: 60px
+                width: auto
+                user-select: none
+
+    .starships
+        &::before
+            content: 'Starships'
+        .img
+            background-image: url(../img/default/starships.png)
+
+    .people
+        &::before
+            content: 'People'
+        .img
+            background-image: url(../img/default/people.png)
+
+    .planets
+        &::before
+            content: 'Planets'
+        .img
+            background-image: url(../img/default/planets.png)
+                
+
+    .heading
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 0 15px
+        height: 50px
+        background-color: #fff
+        font-weight: 600
+        width: 250px
+        text-transform: capitalize
+        cursor: pointer
+        font-weight: 700
+        user-select: none
+        text-align: left
+
+        img
+            width: 15px
+            margin-left: 10px
+            transition: 400ms
+            transform: rotateY(0deg)
+
+        img.rotated
+            transform: rotateX(180deg)
+
+    .description
+        width: 250px
+        position: absolute
+        top: 300px
+        background-color: #111
+        color: #fff
+        display: flex
+        flex-direction: column
+        text-align: left
+        max-height: 0
+        transition: 400ms
+        overflow: hidden
+        box-shadow: 0 0 29px -11px rgba(0,0,0,0.2)
+        
+
+        div
+            width: 100%
+            padding: 15px
+            display: flex
+            align-items: center
+            min-height: 50px
+            text-transform: capitalize
+            font-weight: 600
+
+            span
                 font-weight: 400
-                width: 250px
-                text-transform: capitalize
 
-            .button
-                color: #fff
-                padding: 15px
-                background: linear-gradient(to right top, #0f0c29, #302b63)
-                font-weight: 700
-                width: 250px
-                border-radius: 0 0 10px 10px
-                text-transform: uppercase
-                cursor: pointer
-                transition: 200ms
-                letter-spacing: 2px
-                &:active
-                    letter-spacing: 1.5px
+    .description.open
+        max-height: 150px
+        
