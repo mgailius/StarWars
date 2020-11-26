@@ -70,31 +70,31 @@ function importStarships() {
 }
 
 function displayPlanets() {
-    UI.heading[0].classList.add("active");
     const random = Math.floor(Math.random() * planets.length);
-    UI.img[0].style.backgroundImage = `url(img/planets/planet${random}.png)`;
     UI.name[0].innerHTML = `${planets[random].name}`;
     UI.property0[0].innerHTML = `${planets[random].climate}`;
     UI.property0[1].innerHTML = `${planets[random].diameter}`;
-    UI.property0[2].innerHTML = `${planets[random].orbital_period}`;   
+    UI.property0[2].innerHTML = `${planets[random].orbital_period}`;
+    UI.heading[0].classList.add("active"); 
+    UI.img[0].style.backgroundImage = `url(img/planets/planet${random}.png)`;
 }
 function displayPeople() {
-    UI.heading[1].classList.add("active");
-    const random = Math.floor(Math.random() * people.length);
-    UI.img[1].style.backgroundImage = `url(img/people/people${random}.jpg)`;
+    const random = Math.floor(Math.random() * people.length);  
     UI.name[1].innerHTML = `${people[random].name}`;
     UI.property1[0].innerHTML = `${people[random].mass}`;
     UI.property1[1].innerHTML = `${people[random].birth_year}`;
-    UI.property1[2].innerHTML = `${people[random].eye_color}`;   
+    UI.property1[2].innerHTML = `${people[random].eye_color}`;
+    UI.heading[1].classList.add("active"); 
+    UI.img[1].style.backgroundImage = `url(img/people/people${random}.jpg)`;
 }
 function displayStarships() {
-    UI.heading[2].classList.add("active");
     const random = Math.floor(Math.random() * starships.length);
-    UI.img[2].style.backgroundImage = `url(img/starships/starship${random}.jpg)`;
     UI.name[2].innerHTML = `${starships[random].name}`;
     UI.property2[0].innerHTML = `${starships[random].crew}`;
     UI.property2[1].innerHTML = `${starships[random].hyperdrive_rating}`;
-    UI.property2[2].innerHTML = `${starships[random].starship_class}`;   
+    UI.property2[2].innerHTML = `${starships[random].starship_class}`;
+    UI.heading[2].classList.add("active");  
+    UI.img[2].style.backgroundImage = `url(img/starships/starship${random}.jpg)`;
 }
 
 initApp();
