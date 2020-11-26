@@ -144,6 +144,8 @@ h1 {
 }
 
 .wrapper .heading {
+  position: absolute;
+  top: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +156,8 @@ h1 {
       -ms-flex-align: center;
           align-items: center;
   padding: 0 15px;
-  height: 50px;
+  max-height: 0;
+  line-height: 50px;
   background-color: #fff;
   font-weight: 600;
   width: 250px;
@@ -166,6 +169,11 @@ h1 {
       -ms-user-select: none;
           user-select: none;
   text-align: left;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+  overflow: hidden;
+  -webkit-box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
 }
 
 .wrapper .heading img {
@@ -180,6 +188,10 @@ h1 {
 .wrapper .heading img.rotated {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
+}
+
+.wrapper .heading.active {
+  max-height: 50px;
 }
 
 .wrapper .description {
@@ -200,8 +212,8 @@ h1 {
   -webkit-transition: 400ms;
   transition: 400ms;
   overflow: hidden;
-  -webkit-box-shadow: 0 0 29px -11px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 29px -11px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 1px 29px -11px rgba(0, 0, 0, 0.4);
 }
 
 .wrapper .description div {

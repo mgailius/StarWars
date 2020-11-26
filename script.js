@@ -54,7 +54,7 @@ function importPeople() {
                 people[i] = person;
             })    
         }         
-    })  
+    })
 }
 
 function importStarships() {
@@ -66,10 +66,11 @@ function importStarships() {
                 starships[i] = ship;
             })    
         }         
-    })  
+    })
 }
 
 function displayPlanets() {
+    UI.heading[0].classList.add("active");
     const random = Math.floor(Math.random() * planets.length);
     UI.img[0].style.backgroundImage = `url(img/planets/planet${random}.png)`;
     UI.name[0].innerHTML = `${planets[random].name}`;
@@ -78,6 +79,7 @@ function displayPlanets() {
     UI.property0[2].innerHTML = `${planets[random].orbital_period}`;   
 }
 function displayPeople() {
+    UI.heading[1].classList.add("active");
     const random = Math.floor(Math.random() * people.length);
     UI.img[1].style.backgroundImage = `url(img/people/people${random}.jpg)`;
     UI.name[1].innerHTML = `${people[random].name}`;
@@ -86,7 +88,9 @@ function displayPeople() {
     UI.property1[2].innerHTML = `${people[random].eye_color}`;   
 }
 function displayStarships() {
+    UI.heading[2].classList.add("active");
     const random = Math.floor(Math.random() * starships.length);
+    if(random == 2){starships[random].name = "Landing Craft";}
     UI.img[2].style.backgroundImage = `url(img/starships/starship${random}.jpg)`;
     UI.name[2].innerHTML = `${starships[random].name}`;
     UI.property2[0].innerHTML = `${starships[random].crew}`;
